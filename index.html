@@ -97,8 +97,8 @@
         }
         
         .badge {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             flex-shrink: 0;
         }
         
@@ -126,8 +126,8 @@
         }
         
         .offer-badge {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             flex-shrink: 0;
         }
         
@@ -351,6 +351,15 @@
             font-weight: 600;
         }
         
+        .contact-info a {
+            color: #4A90E2;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
         .website-url {
             font-family: 'Lora', serif;
             font-size: 1rem;
@@ -538,6 +547,10 @@
             text-decoration: none;
         }
         
+        .footer-section a[href^="tel:"], .footer-section a[href^="mailto:"] {
+            color: #4A90E2;
+        }
+        
         .footer-section a:hover {
             color: #4A90E2;
         }
@@ -565,11 +578,26 @@
             .header {
                 flex-direction: column;
                 gap: 15px;
+                position: relative;
             }
             
             .badge, .offer-badge {
                 width: 60px;
                 height: 60px;
+                position: absolute;
+                top: 0;
+            }
+            
+            .badge {
+                left: 20px;
+            }
+            
+            .offer-badge {
+                right: 20px;
+            }
+            
+            .company-branding {
+                margin-top: 80px;
             }
             
             .company-name {
@@ -739,8 +767,8 @@
         <section class="cta" id="contact">
             <h4>Ready to Preserve Your Legacy?</h4>
             <p>Book Your Free In-Home Photo Scan — No Obligation!</p>
-            <div class="contact-info">Call or Text: (302) 312-9308</div>
-            <div class="contact-info">yourname@denvillephotopreservation.com</div>
+            <div class="contact-info">Call or Text Any Time: <a href="tel:9089553902">(908) 955-3902</a></div>
+            <div class="contact-info"><a href="mailto:booking@denvillephotopreservation.com">booking@denvillephotopreservation.com</a></div>
             <a href="#" class="website-url">www.denvillephotopreservation.com</a>
         </section>
     </div>
@@ -750,8 +778,8 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Contact Info</h4>
-                <p>Call or Text: (302) 312-9308</p>
-                <p>Email: yourname@denvillephotopreservation.com</p>
+                <p>Call or Text Any Time: <a href="tel:9089553902">(908) 955-3902</a></p>
+                <p>Email: <a href="mailto:booking@denvillephotopreservation.com">booking@denvillephotopreservation.com</a></p>
                 <p>Website: www.denvillephotopreservation.com</p>
             </div>
             
