@@ -206,15 +206,14 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
-            min-height: 280px;
-            max-width: fit-content;
+            width: 280px;
+            height: 320px;
         }
         
         .service-image {
             width: 100%;
-            height: auto;
-            max-height: 180px;
-            object-fit: contain;
+            height: 200px;
+            object-fit: cover;
             margin-bottom: 15px;
             border-radius: 4px;
             flex-shrink: 0;
@@ -223,6 +222,16 @@
         .service-image-container {
             position: relative;
             margin-bottom: 15px;
+            width: 100%;
+            height: 200px;
+        }
+        
+        .service-image-container .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 0;
         }
         
         .play-button {
@@ -238,6 +247,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            transition: opacity 0.3s ease;
+            z-index: 10;
         }
         
         .play-button::after {
@@ -642,6 +653,17 @@
             .price {
                 font-size: 2.5rem;
             }
+            
+            .service-card {
+                width: 100%;
+                max-width: 280px;
+                height: auto;
+                min-height: 320px;
+            }
+            
+            .service-image, .service-image-container {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -712,7 +734,7 @@
             
             <div class="service-card">
                 <div class="service-image-container">
-                    <img src="./assets/images/gallery/convert-photo-to-video.jpg" alt="Convert Photos to Videos" class="service-image">
+                    <video id="service-video" src="./assets/images/gallery/convert-photo-to-video.mp4" class="service-image" muted loop playsinline></video>
                     <div class="play-button"></div>
                 </div>
                 <h3 class="service-title">Turn Photos<br>into Videos</h3>
@@ -803,5 +825,30 @@
             <p>&copy; 2024 Denville Photo Preservation. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('service-video');
+            const playButton = document.querySelector('.play-button');
+
+            playButton.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    playButton.style.display = 'none';
+                } else {
+                    video.pause();
+                    playButton.style.display = 'flex';
+                }
+            });
+
+            video.addEventListener('pause', function() {
+                playButton.style.display = 'flex';
+            });
+
+            video.addEventListener('play', function() {
+                playButton.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
