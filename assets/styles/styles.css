@@ -454,7 +454,15 @@ body {
   font-size: 3rem;
   color: #4A90E2;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.price-qualifier {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  color: #8B4513;
+  font-style: italic;
+  margin-bottom: 15px;
 }
 
 .price-description {
