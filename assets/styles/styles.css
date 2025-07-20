@@ -200,6 +200,124 @@ body {
   margin-bottom: 40px;
 }
 
+/* Special Offer Section */
+.special-offer {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.offer-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.offer-badge-large {
+  background: #4A90E2;
+  color: white;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 6px 15px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.offer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #8B4513;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.offer-price {
+  margin-bottom: 20px;
+}
+
+.offer-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #4A90E2;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.offer-details {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+  display: block;
+  margin-top: 5px;
+}
+
+.offer-description {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.offer-features {
+  list-style: none;
+  margin: 0 0 30px 0;
+  padding: 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.offer-feature {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+  display: block;
+}
+
+.offer-feature::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4A90E2;
+  font-weight: bold;
+}
+
+.offer-button {
+  background: #4A90E2;
+  color: white;
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.offer-button:hover {
+  background: #357abd;
+}
+
+.offer-urgency {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
 .service-arrow {
   width: 60px;
   height: 40px;
@@ -688,5 +806,27 @@ body {
   .service-image,
   .service-image-container {
     height: 200px;
+  }
+
+  /* Special Offer Mobile Styles */
+  .special-offer {
+    padding: 20px;
+  }
+
+  .offer-title {
+    font-size: 1.8rem;
+  }
+
+  .offer-amount {
+    font-size: 2.5rem;
+  }
+
+  .offer-details {
+    font-size: 1rem;
+  }
+
+  .offer-button {
+    font-size: 1rem;
+    padding: 10px 25px;
   }
 }
