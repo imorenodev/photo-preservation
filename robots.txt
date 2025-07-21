@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.denvillephotopreservation.com/sitemap.xml
