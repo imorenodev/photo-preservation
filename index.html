@@ -444,6 +444,13 @@
 
                         <label>Approximate Number of Photos to Scan: <span style="color: red;">*</span></label>
                         <input type="number" name="photo_count" id="photoCount" min="1" oninput="calculateTotal()">
+                        
+                        <div style="margin-top: 15px;">
+                            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; line-height: 1.4;">
+                                <input type="checkbox" name="pricing_disclaimer" id="pricingDisclaimer" required style="margin-top: 3px; flex-shrink: 0;">
+                                <span><strong>I understand</strong> this quote is based on my estimated photo count. Final pricing will be calculated at $0.10 per photo for in-home service or $0.05 per photo for pickup/drop-off service, based on the actual number of photos scanned.</span>
+                            </label>
+                        </div>
                     </div>
 
                     <div style="margin-top:15px;">
@@ -667,6 +674,7 @@
                 const price = document.getElementById("totalPrice");
                 const serviceRadios = document.querySelectorAll('input[name="service_type"]');
                 const photoCountInput = document.getElementById("photoCount");
+                const pricingDisclaimer = document.getElementById("pricingDisclaimer");
 
                 details.innerHTML = '';
                 price.textContent = "$0.00";
@@ -677,6 +685,7 @@
                     // Make custom fields required
                     serviceRadios.forEach(radio => radio.required = true);
                     photoCountInput.required = true;
+                    if (pricingDisclaimer) pricingDisclaimer.required = true;
                 } else if (value) {
                     custom.style.display = "none";
                     details.style.display = "block";
@@ -687,6 +696,10 @@
                     });
                     photoCountInput.required = false;
                     photoCountInput.value = '';
+                    if (pricingDisclaimer) {
+                        pricingDisclaimer.required = false;
+                        pricingDisclaimer.checked = false;
+                    }
                     
                     switch (value) {
                         case "Try Service":
@@ -716,6 +729,10 @@
                     });
                     photoCountInput.required = false;
                     photoCountInput.value = '';
+                    if (pricingDisclaimer) {
+                        pricingDisclaimer.required = false;
+                        pricingDisclaimer.checked = false;
+                    }
                 }
             };
 
