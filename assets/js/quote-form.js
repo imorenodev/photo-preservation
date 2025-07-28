@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Handle "Claim This Deal Now!" button click (for index.html)
+    // Handle "Claim This Deal Now!" button click (for index.html special offer)
     const claimDealButton = document.getElementById('claimDealButton');
     if (claimDealButton) {
         claimDealButton.addEventListener('click', function() {
@@ -136,4 +136,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         });
     }
+
+    // Handle package buttons in pricing section
+    const packageButtons = document.querySelectorAll('.package-button');
+    packageButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const packageName = this.getAttribute('data-package');
+            // Small delay to allow scroll to complete
+            setTimeout(function() {
+                const packageSelect = document.getElementById('packageSelect');
+                if (packageSelect && packageName) {
+                    packageSelect.value = packageName;
+                    handlePackageChange(); // Trigger the change event
+                }
+            }, 500);
+        });
+    });
 });
