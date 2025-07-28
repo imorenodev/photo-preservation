@@ -1031,3 +1031,171 @@ body {
     padding: 15px;
   }
 }
+
+/* Quote Form Section */
+.quote-form-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-form-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #8B4513;
+  margin-bottom: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#quoteForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#quoteForm label {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+#quoteForm input[type="text"],
+#quoteForm input[type="number"],
+#quoteForm select {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  transition: border-color 0.3s ease;
+}
+
+#quoteForm input[type="text"]:focus,
+#quoteForm input[type="number"]:focus,
+#quoteForm select:focus {
+  outline: none;
+  border-color: #4A90E2;
+}
+
+#quoteForm input[type="radio"],
+#quoteForm input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+#quoteForm input[type="radio"] + label,
+#quoteForm input[type="checkbox"] + label {
+  font-weight: 400;
+  display: inline;
+  margin-left: 5px;
+}
+
+#packageDetails {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 500;
+}
+
+#customOptions {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+#customOptions label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+#customOptions br {
+  margin-bottom: 5px;
+}
+
+#totalPrice {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #4A90E2;
+  font-weight: 700;
+}
+
+#quoteForm button[type="submit"] {
+  background: #4A90E2;
+  color: white;
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#quoteForm button[type="submit"]:hover {
+  background: #357abd;
+}
+
+#quoteForm button[type="submit"]:focus {
+  outline: 2px solid #4A90E2;
+  outline-offset: 2px;
+}
+
+#quoteForm button[type="submit"]:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#quoteForm button[type="submit"]:disabled:hover {
+  background: #ccc;
+}
+
+#quoteForm p em {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin: 15px 0;
+}
+
+/* Quote Form Mobile Styles */
+@media (max-width: 768px) {
+  .quote-form-section {
+    padding: 20px;
+  }
+  
+  .quote-form-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  #quoteForm input[type="text"],
+  #quoteForm input[type="number"],
+  #quoteForm select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  #customOptions {
+    padding: 10px;
+  }
+  
+  #totalPrice {
+    font-size: 1.3rem;
+  }
+  
+  #quoteForm button[type="submit"] {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
