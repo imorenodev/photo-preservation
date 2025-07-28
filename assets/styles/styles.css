@@ -634,18 +634,32 @@ body {
 
 .price {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #4A90E2;
+  font-size: 2.5rem;
+  color: #8B4513;
   font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.original-price {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
   margin-bottom: 5px;
 }
 
-.price-qualifier {
-  font-family: 'Lora', serif;
-  font-size: 1.5rem;
-  color: #8B4513;
-  font-style: italic;
-  margin-bottom: 15px;
+.sale-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #4A90E2;
+  font-weight: 700;
 }
 
 .price-description {
@@ -907,7 +921,15 @@ body {
   }
 
   .price {
+    font-size: 2rem;
+  }
+
+  .sale-price {
     font-size: 2.5rem;
+  }
+
+  .original-price {
+    font-size: 1rem;
   }
 
   .service-card {
