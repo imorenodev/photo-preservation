@@ -208,6 +208,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Check for URL parameter to preselect package
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageParam = urlParams.get('package');
+            
+            if (packageParam === 'try') {
+                const packageSelect = document.getElementById('packageSelect');
+                if (packageSelect) {
+                    packageSelect.value = 'Try Service';
+                    handlePackageChange(); // Trigger the change event
+                }
+            }
+
             // Quote form functionality
             window.handlePackageChange = function() {
                 const select = document.getElementById("packageSelect");
