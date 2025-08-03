@@ -70,6 +70,7 @@ window.calculateTotal = function() {
     const photoCount = parseInt(document.getElementById("photoCount").value) || 0;
     const digitalFrame = document.querySelector('input[name="digital_frame"]').checked;
     const familyWebsite = document.querySelector('input[name="family_website"]').checked;
+    const cloudStorage = document.querySelector('input[name="cloud_storage"]').checked;
 
     let total = 0;
     let originalTotal = 0;
@@ -82,6 +83,7 @@ window.calculateTotal = function() {
 
     if (digitalFrame) total += 200;
     if (familyWebsite) total += 200;
+    if (cloudStorage) total += 100;
 
     // Check if minimum was applied
     let minimumApplied = false;
