@@ -74,7 +74,7 @@ window.calculateTotal = function() {
     let total = 0;
 
     if (service) {
-        const rate = service.value === "in-home" ? 0.10 : 0.05;
+        const rate = service.value === "in-home" ? 0.05 : 0.025;
         total += rate * photoCount;
     }
 
