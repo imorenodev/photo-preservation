@@ -47,10 +47,6 @@ window.handlePackageChange = function() {
                 details.innerHTML = "Professional In-Home or Pickup & Delivery Photo Scanning. Up to 5,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $499";
                 price.textContent = "$499.00";
                 break;
-            case "Legacy Package":
-                details.innerHTML = "Professional In-Home Photo Scanning. Up to 10,000 Photos + Family Archive Website + Digital Frame + USB Drive + Long-term Storage. Price: $849";
-                price.textContent = "$849.00";
-                break;
         }
     } else {
         details.style.display = "none";
@@ -152,4 +148,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         });
     });
+
+    // Handle custom quote button
+    const customQuoteButton = document.querySelector('.custom-quote-button');
+    if (customQuoteButton) {
+        customQuoteButton.addEventListener('click', function() {
+            // Small delay to allow scroll to complete
+            setTimeout(function() {
+                const packageSelect = document.getElementById('packageSelect');
+                if (packageSelect) {
+                    packageSelect.value = 'Custom';
+                    handlePackageChange(); // Trigger the change event
+                }
+            }, 500);
+        });
+    }
 });
