@@ -44,7 +44,7 @@ window.handlePackageChange = function() {
                 price.textContent = "$199.00";
                 break;
             case "Heirloom Package":
-                details.innerHTML = "Professional In-Home or Pickup & Delivery Photo Scanning. Up to 5,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $499";
+                details.innerHTML = "Professional In-Home or Pickup & Delivery Photo Scanning. Up to 10,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $499";
                 price.textContent = "$499.00";
                 break;
         }
