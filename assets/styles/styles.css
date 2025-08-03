@@ -840,6 +840,18 @@ body {
   color: #4A90E2;
 }
 
+.footer-story-link {
+  color: #4A90E2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-story-link:hover {
+  color: #357abd;
+  text-decoration: underline;
+}
+
 .footer-section p,
 .footer-section a {
   font-family: 'Lora', serif;
