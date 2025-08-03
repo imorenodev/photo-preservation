@@ -564,6 +564,29 @@ body {
   text-decoration: underline;
 }
 
+.cta-button {
+  background: #4A90E2;
+  color: white;
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 40px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.cta-button:hover {
+  background: #357abd;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(74, 144, 226, 0.4);
+}
+
 /* Explainer Video Section */
 .explainer-video {
   text-align: center;
