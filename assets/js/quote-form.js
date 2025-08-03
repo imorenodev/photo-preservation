@@ -72,21 +72,37 @@ window.calculateTotal = function() {
     const familyWebsite = document.querySelector('input[name="family_website"]').checked;
 
     let total = 0;
+    let originalTotal = 0;
 
     if (service) {
         const rate = service.value === "in-home" ? 0.05 : 0.025;
         total += rate * photoCount;
+        originalTotal = total;
     }
 
     if (digitalFrame) total += 200;
     if (familyWebsite) total += 200;
 
-    // Apply $50 minimum
+    // Check if minimum was applied
+    let minimumApplied = false;
     if (total > 0 && total < 50) {
+        minimumApplied = true;
         total = 50;
     }
 
     document.getElementById("totalPrice").textContent = `$${total.toFixed(2)}`;
+    
+    // Show/hide minimum notice
+    const minimumNotice = document.getElementById("minimumNotice");
+    if (minimumNotice) {
+        if (minimumApplied) {
+            const rate = service.value === "in-home" ? 0.05 : 0.025;
+            minimumNotice.innerHTML = `<small style="color: #666; font-style: italic;">Note: ${photoCount} photos × $${rate.toFixed(3)} = $${originalTotal.toFixed(2)}, but $50 minimum applies.</small>`;
+            minimumNotice.style.display = "block";
+        } else {
+            minimumNotice.style.display = "none";
+        }
+    }
 };
 
 window.toggleSubmitButton = function() {

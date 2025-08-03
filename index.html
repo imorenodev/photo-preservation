@@ -626,7 +626,8 @@
                     <div id="customOptions" style="display:none; margin-top:10px;">
                         <label>Service Type: <span style="color: red;">*</span></label><br>
                         <input type="radio" name="service_type" id="serviceInHome" value="in-home" onchange="calculateTotal()"> In-Home ($0.05/photo)<br>
-                        <input type="radio" name="service_type" id="serviceTakeAway" value="take-away" onchange="calculateTotal()"> Pickup/Drop-off ($0.025/photo)<br><br>
+                        <input type="radio" name="service_type" id="serviceTakeAway" value="take-away" onchange="calculateTotal()"> Pickup/Drop-off ($0.025/photo)<br>
+                        <small style="color: #666; font-style: italic; margin-left: 20px;">$50 minimum order applies</small><br><br>
 
                         <label>Add-ons:</label><br>
                         <input type="checkbox" name="digital_frame" value="yes" onchange="calculateTotal()"> Digital Frame ($200)<br>
@@ -646,6 +647,7 @@
 
                     <div style="margin-top:15px;">
                         <strong>Total Price:</strong> <span id="totalPrice">$0.00</span>
+                        <div id="minimumNotice" style="display: none; margin-top: 5px;"></div>
                     </div>
 
                     <p><em>Submit now to lock in this price. We'll contact you to confirm and schedule service.</em></p>
