@@ -333,9 +333,9 @@
                     <div class="price-container">
                         <span class="sale-price">$199</span>
                     </div>
-                    <div class="price-description">1,000 photos, indexing</div>
+                    <div class="price-description">5,000 photos, indexing</div>
                     <ul class="pricing-features">
-                        <li>Up to 1,000 Photos</li>
+                        <li>Up to 5,000 Photos</li>
                         <li>Professional indexing and organization</li>
                         <li>USB Drive included</li>
                         <li>Long-term cloud storage</li>
@@ -349,21 +349,20 @@
                     <div class="price-container">
                         <span class="sale-price">$499</span>
                     </div>
-                    <div class="price-description">Up to 5,000 photos, in-home or pickup service</div>
+                    <div class="price-description">Up to 10,000 photos, in-home or pickup service</div>
                     <ul class="pricing-features">
-                        <li>Up to 5,000 Photos</li>
+                        <li>Up to 10,000 Photos</li>
                         <li>In-Home or Pickup & Delivery Service</li>
                         <li>Digital Frame included</li>
                         <li>Private cloud gallery for family</li>
                         <li>Premium restoration options</li>
                         <li>USB Drive and long-term storage</li>
-                        <li>Priority customer support</li>
                     </ul>
                     <a href="#quote" class="offer-button package-button" data-package="Heirloom Package" aria-label="Select Heirloom Package">Book This Package Now!</a>
                 </div>
                 
                 <div class="custom-quote-section">
-                    <a href="#quote" class="custom-quote-button">Have 5,000+ photos? Get a Custom Quote</a>
+                    <a href="#quote" class="custom-quote-button">Have 10,000+ photos? Get a Custom Quote</a>
                 </div>
             </section>
 
@@ -617,7 +616,7 @@
                         <option value="">-- Choose --</option>
                         <option value="Starter Scan">Starter Scan (50 Scans + USB - $50)</option>
                         <option value="Memory Package">Memory Package (Up to 5,000 Photos - $199)</option>
-                        <option value="Heirloom Package">Heirloom Package (Up to 5,000 Photos - $499)</option>
+                        <option value="Heirloom Package">Heirloom Package (Up to 10,000 Photos - $499)</option>
                         <option value="Custom">Custom Package</option>
                     </select>
 
@@ -625,12 +624,14 @@
 
                     <div id="customOptions" style="display:none; margin-top:10px;">
                         <label>Service Type: <span style="color: red;">*</span></label><br>
-                        <input type="radio" name="service_type" id="serviceInHome" value="in-home" onchange="calculateTotal()"> In-Home ($0.10/photo)<br>
-                        <input type="radio" name="service_type" id="serviceTakeAway" value="take-away" onchange="calculateTotal()"> Pickup/Drop-off ($0.05/photo)<br><br>
+                        <input type="radio" name="service_type" id="serviceInHome" value="in-home" onchange="calculateTotal()"> In-Home ($0.05/photo)<br>
+                        <input type="radio" name="service_type" id="serviceTakeAway" value="take-away" onchange="calculateTotal()"> Pickup/Drop-off ($0.025/photo)<br>
+                        <small style="color: #666; font-style: italic; margin-left: 20px;">$50 minimum order applies</small><br><br>
 
                         <label>Add-ons:</label><br>
                         <input type="checkbox" name="digital_frame" value="yes" onchange="calculateTotal()"> Digital Frame ($200)<br>
                         <input type="checkbox" name="family_website" value="yes" onchange="calculateTotal()"> Family Website ($200)<br>
+                        <input type="checkbox" name="cloud_storage" value="yes" onchange="calculateTotal()"> 10-year Cloud Storage ($100)<br>
                         <input type="checkbox" name="usb_drive" value="yes" checked disabled> USB Drive (Free & Included)<br><br>
 
                         <label>Approximate Number of Photos to Scan: <span style="color: red;">*</span></label>
@@ -639,13 +640,14 @@
                         <div style="margin-top: 15px;">
                             <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; line-height: 1.4;">
                                 <input type="checkbox" name="pricing_disclaimer" id="pricingDisclaimer" required style="margin-top: 3px; flex-shrink: 0;">
-                                <span><strong>I understand</strong> this quote is based on my estimated photo count. Final pricing will be calculated at $0.10 per photo for in-home service or $0.05 per photo for pickup/drop-off service, based on the actual number of photos scanned.</span>
+                                <span><strong>I understand</strong> this quote is based on my estimated photo count. Final pricing will be calculated at $0.05 per photo for in-home service or $0.025 per photo for pickup/drop-off service, based on the actual number of photos scanned.</span>
                             </label>
                         </div>
                     </div>
 
                     <div style="margin-top:15px;">
                         <strong>Total Price:</strong> <span id="totalPrice">$0.00</span>
+                        <div id="minimumNotice" style="display: none; margin-top: 5px;"></div>
                     </div>
 
                     <p><em>Submit now to lock in this price. We'll contact you to confirm and schedule service.</em></p>

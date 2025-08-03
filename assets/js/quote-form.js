@@ -44,7 +44,7 @@ window.handlePackageChange = function() {
                 price.textContent = "$199.00";
                 break;
             case "Heirloom Package":
-                details.innerHTML = "Professional In-Home or Pickup & Delivery Photo Scanning. Up to 5,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $499";
+                details.innerHTML = "Professional In-Home or Pickup & Delivery Photo Scanning. Up to 10,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $499";
                 price.textContent = "$499.00";
                 break;
         }
@@ -70,23 +70,47 @@ window.calculateTotal = function() {
     const photoCount = parseInt(document.getElementById("photoCount").value) || 0;
     const digitalFrame = document.querySelector('input[name="digital_frame"]').checked;
     const familyWebsite = document.querySelector('input[name="family_website"]').checked;
+    const cloudStorage = document.querySelector('input[name="cloud_storage"]').checked;
 
-    let total = 0;
+    let basePhotosCost = 0;
+    let originalPhotosCost = 0;
+    let addOnsCost = 0;
 
+    // Calculate base photos cost
     if (service) {
-        const rate = service.value === "in-home" ? 0.10 : 0.05;
-        total += rate * photoCount;
+        const rate = service.value === "in-home" ? 0.05 : 0.025;
+        basePhotosCost = rate * photoCount;
+        originalPhotosCost = basePhotosCost;
     }
 
-    if (digitalFrame) total += 200;
-    if (familyWebsite) total += 200;
-
-    // Apply $50 minimum
-    if (total > 0 && total < 50) {
-        total = 50;
+    // Apply $50 minimum to base photos cost only
+    let minimumApplied = false;
+    if (basePhotosCost > 0 && basePhotosCost < 50) {
+        minimumApplied = true;
+        basePhotosCost = 50;
     }
+
+    // Calculate add-ons separately
+    if (digitalFrame) addOnsCost += 200;
+    if (familyWebsite) addOnsCost += 200;
+    if (cloudStorage) addOnsCost += 100;
+
+    // Total is base cost (with minimum applied) plus add-ons
+    const total = basePhotosCost + addOnsCost;
 
     document.getElementById("totalPrice").textContent = `$${total.toFixed(2)}`;
+    
+    // Show/hide minimum notice
+    const minimumNotice = document.getElementById("minimumNotice");
+    if (minimumNotice) {
+        if (minimumApplied) {
+            const rate = service.value === "in-home" ? 0.05 : 0.025;
+            minimumNotice.innerHTML = `<small style="color: #666; font-style: italic;">Note: ${photoCount} photos × $${rate.toFixed(3)} = $${originalPhotosCost.toFixed(2)}, but $50 minimum applies to base photo cost.</small>`;
+            minimumNotice.style.display = "block";
+        } else {
+            minimumNotice.style.display = "none";
+        }
+    }
 };
 
 window.toggleSubmitButton = function() {
