@@ -259,6 +259,7 @@
                     <div class="starter-offer-text">
                         <p>Get 50 photos scanned in-home or by pickup. Delivered via USB and cloud link.</p>
                         <p>Use this as a trial—or apply it toward a bigger package if you love it.</p>
+                        <strong>Makes a great gift!</strong>
                     </div>
                     <div class="starter-offer-cta">
                         <a href="#quote" class="starter-offer-button">Book My Starter Scan</a>
@@ -281,38 +282,60 @@
             <!-- Pricing Section -->
             <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
                 <h3 id="pricing-heading">Simple, Transparent Pricing</h3>
-                
-                <div class="pricing-table">
-                    <div class="pricing-header">
-                        <div class="pricing-header-item">Package</div>
-                        <div class="pricing-header-item">Price</div>
-                        <div class="pricing-header-item">Includes</div>
+
+                <!-- Starter Scan -->
+                <div class="pricing-card">
+                    <div class="price">Starter Scan</div>
+                    <div class="price-container">
+                        <span class="sale-price">$50</span>
                     </div>
-                    
-                    <!-- Starter Scan -->
-                    <div class="pricing-row">
-                        <div class="pricing-cell package-name">Starter Scan</div>
-                        <div class="pricing-cell price-cell">$50</div>
-                        <div class="pricing-cell features-cell">50 photos, USB, delivery</div>
+                    <div class="price-description">50 photos, USB, delivery</div>
+                    <ul class="pricing-features">
+                        <li>Professional High-Resolution Scans</li>
+                        <li>Convenient USB Drive Included</li>
+                        <li>No Hidden Fees or Commitments</li>
+                        <li>Perfect way to test our service</li>
+                    </ul>
+                    <a href="#quote" class="offer-button package-button" data-package="Starter Scan" aria-label="Select Starter Scan">Book This Deal Now!</a>
+                </div>
+
+                <!-- Memory Package -->
+                <div class="pricing-card">
+                    <div class="price">Memory Package</div>
+                    <div class="price-container">
+                        <span class="sale-price">$199</span>
                     </div>
-                    
-                    <!-- Organize & Preserve -->
-                    <div class="pricing-row">
-                        <div class="pricing-cell package-name">Organize & Preserve</div>
-                        <div class="pricing-cell price-cell">$199</div>
-                        <div class="pricing-cell features-cell">1,000 photos, indexing, slideshow</div>
+                    <div class="price-description">1,000 photos, indexing</div>
+                    <ul class="pricing-features">
+                        <li>Up to 1,000 Photos</li>
+                        <li>Professional indexing and organization</li>
+                        <li>USB Drive included</li>
+                        <li>Long-term cloud storage</li>
+                    </ul>
+                    <a href="#quote" class="offer-button package-button" data-package="Memory Package" aria-label="Select Memory Package">Claim This Package!</a>
+                </div>
+
+                <!-- Heirloom Package -->
+                <div class="pricing-card featured">
+                    <div class="price">Heirloom Package</div>
+                    <div class="price-container">
+                        <span class="sale-price">$499</span>
                     </div>
-                    
-                    <!-- Legacy Package -->
-                    <div class="pricing-row featured">
-                        <div class="pricing-cell package-name">Legacy Package</div>
-                        <div class="pricing-cell price-cell">$499</div>
-                        <div class="pricing-cell features-cell">5,000 photos, digital frame, cloud gallery, premium restoration option</div>
-                    </div>
+                    <div class="price-description">Up to 5,000 photos, in-home or pickup service</div>
+                    <ul class="pricing-features">
+                        <li>Up to 5,000 Photos</li>
+                        <li>In-Home or Pickup & Delivery Service</li>
+                        <li>Digital Frame included</li>
+                        <li>Private cloud gallery for family</li>
+                        <li>Premium restoration options</li>
+                        <li>USB Drive and long-term storage</li>
+                        <li>Priority customer support</li>
+                    </ul>
+                    <a href="#quote" class="offer-button package-button" data-package="Heirloom Package" aria-label="Select Heirloom Package">Book This Package Now!</a>
                 </div>
                 
                 <div class="custom-quote-section">
-                    <a href="#quote" class="custom-quote-button">Have 10,000+ photos? Get a Custom Quote</a>
+                    <a href="#quote" class="custom-quote-button">Have 5,000+ photos? Get a Custom Quote</a>
                 </div>
             </section>
 
@@ -379,7 +402,7 @@
             </section>
 
             <!-- Before/After Visuals & Sample Output Section -->
-            <section class="before-after-section" aria-labelledby="before-after-heading">
+            <section class="before-after-section" aria-labelledby="before-after-heading" style="display: none;">
                 <h3 id="before-after-heading">See the Quality & Results</h3>
                 
                 <div class="before-after-carousel">
@@ -441,7 +464,7 @@
             </section>
 
             <!-- Testimonials & Community Trust Section -->
-            <section class="testimonials-section" aria-labelledby="testimonials-heading">
+            <section class="testimonials-section" aria-labelledby="testimonials-heading" style="display: none;">
                 <h3 id="testimonials-heading">What Our Neighbors Say</h3>
                 
                 <div class="testimonials-grid">
@@ -564,9 +587,9 @@
                     <label>Select a Package:</label>
                     <select name="package" id="packageSelect" required onchange="handlePackageChange()">
                         <option value="">-- Choose --</option>
-                        <option value="Try Service">Try Service (50 Scans + USB - $50)</option>
+                        <option value="Starter Scan">Starter Scan (50 Scans + USB - $50)</option>
                         <option value="Memory Package">Memory Package (Up to 5,000 Photos - $199)</option>
-                        <option value="Heirloom Package">Heirloom Package (Up to 10,000 Photos - $449)</option>
+                        <option value="Heirloom Package">Heirloom Package (Up to 5,000 Photos - $499)</option>
                         <option value="Legacy Package">Legacy Package (Up to 10,000 Photos - $849)</option>
                         <option value="Custom">Custom Package</option>
                     </select>
@@ -621,7 +644,7 @@
                             <span class="faq-icon" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer" id="faq-answer-1" aria-hidden="true">
-                            <p>For in-home service: We scan 500-1000 photos per hour. Most jobs completed in one visit. For pickup service: 1-2 week turnaround with secure handling.</p>
+                            <p>For in-home service: We scan 500-1000 photos per hour. Most jobs completed in one visit. For pickup service: 1 week turnaround with secure handling.</p>
                         </div>
                     </div>
 
@@ -661,7 +684,7 @@
                             <span class="faq-icon" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer" id="faq-answer-5" aria-hidden="true">
-                            <p>Absolutely. We're fully insured and bonded. For in-home service, your photos never leave your house. For pickup service, we use secure transport and handle each photo with museum-quality care. Many historical societies trust us.</p>
+                            <p>Absolutely. We're fully insured and bonded. For in-home service, your photos never leave your house. For pickup service, we use secure transport and handle each photo with museum-quality care.</p>
                         </div>
                     </div>
 

@@ -35,7 +35,7 @@ window.handlePackageChange = function() {
         }
         
         switch (value) {
-            case "Try Service":
+            case "Starter Scan":
                 details.innerHTML = "LIMITED TIME: 50 scanned photos + USB Drive. Perfect way to test our service. Price: $50";
                 price.textContent = "$50.00";
                 break;
@@ -44,8 +44,8 @@ window.handlePackageChange = function() {
                 price.textContent = "$199.00";
                 break;
             case "Heirloom Package":
-                details.innerHTML = "Professional Pickup & Delivery Photo Scanning. Up to 10,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $449";
-                price.textContent = "$449.00";
+                details.innerHTML = "Professional In-Home or Pickup & Delivery Photo Scanning. Up to 5,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $499";
+                price.textContent = "$499.00";
                 break;
             case "Legacy Package":
                 details.innerHTML = "Professional In-Home Photo Scanning. Up to 10,000 Photos + Family Archive Website + Digital Frame + USB Drive + Long-term Storage. Price: $849";
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (packageParam === 'try') {
         const packageSelect = document.getElementById('packageSelect');
         if (packageSelect) {
-            packageSelect.value = 'Try Service';
+            packageSelect.value = 'Starter Scan';
             handlePackageChange(); // Trigger the change event
         }
     }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 const packageSelect = document.getElementById('packageSelect');
                 if (packageSelect) {
-                    packageSelect.value = 'Try Service';
+                    packageSelect.value = 'Starter Scan';
                     handlePackageChange(); // Trigger the change event
                 }
             }, 500);
