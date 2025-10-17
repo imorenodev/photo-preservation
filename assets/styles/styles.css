@@ -1893,6 +1893,93 @@ body {
   text-decoration: none;
 }
 
+/* Price Comparison Section */
+.price-comparison {
+  margin-bottom: 40px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+.price-comparison h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #8B4513;
+  margin-bottom: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.comparison-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comparison-table th {
+  background-color: #f8f9fa;
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.comparison-table td {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: #555;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.our-price {
+  background-color: #f0f8f0;
+  color: #28a745;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.comparison-table td:not(.our-price):not(:first-child) {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.comparison-note {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.comparison-note p {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: #8B4513;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #4A90E2;
+  margin: 0;
+}
+
 /* Service Breakdown Section */
 .service-breakdown {
   margin-bottom: 40px;
@@ -2386,6 +2473,33 @@ body {
   .sticky-btn-secondary {
     font-size: 0.9rem;
     padding: 8px 16px;
+  }
+
+  .price-comparison {
+    padding: 20px;
+  }
+
+  .price-comparison h3 {
+    font-size: 1.8rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th {
+    font-size: 1rem;
+  }
+
+  .our-price {
+    font-size: 1rem;
+  }
+
+  .comparison-note p {
+    font-size: 1rem;
+    padding: 12px;
   }
 }
 

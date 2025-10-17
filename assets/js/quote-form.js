@@ -40,8 +40,8 @@ window.handlePackageChange = function() {
                 price.textContent = "$50.00";
                 break;
             case "Memory Package":
-                details.innerHTML = "Professional Pickup & Delivery Photo Scanning. Up to 5,000 Photos + USB Drive + Long-term Storage. Price: $199";
-                price.textContent = "$199.00";
+                details.innerHTML = "Professional Pickup & Delivery Photo Scanning. Up to 5,000 Photos + USB Drive + Long-term Storage. Price: $249";
+                price.textContent = "$249.00";
                 break;
             case "Heirloom Package":
                 details.innerHTML = "Professional In-Home or Pickup & Delivery Photo Scanning. Up to 10,000 Photos + Digital Frame + USB Drive + Long-term Storage. Price: $499";
@@ -78,7 +78,7 @@ window.calculateTotal = function() {
 
     // Calculate base photos cost
     if (service) {
-        const rate = service.value === "in-home" ? 0.05 : 0.025;
+        const rate = service.value === "in-home" ? 0.10 : 0.05;
         basePhotosCost = rate * photoCount;
         originalPhotosCost = basePhotosCost;
     }
@@ -104,7 +104,7 @@ window.calculateTotal = function() {
     const minimumNotice = document.getElementById("minimumNotice");
     if (minimumNotice) {
         if (minimumApplied) {
-            const rate = service.value === "in-home" ? 0.05 : 0.025;
+            const rate = service.value === "in-home" ? 0.10 : 0.05;
             minimumNotice.innerHTML = `<small style="color: #666; font-style: italic;">Note: ${photoCount} photos × $${rate.toFixed(3)} = $${originalPhotosCost.toFixed(2)}, but $50 minimum applies to base photo cost.</small>`;
             minimumNotice.style.display = "block";
         } else {
